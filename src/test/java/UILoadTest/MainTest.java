@@ -12,7 +12,7 @@ public class MainTest {
 //    public static void main(String[] args) throws InterruptedException {
     @Test
     public void startLoad(){
-        int numberOfUsersPerSession = 1;
+        int numberOfUsersPerSession = 10;
         String[] listOfSessionsUrls = new String[]{
                 "https://bbb.famcare.app/b/ahm-hb6-gsm-akr",
                 "https://bbb.famcare.app/b/ahm-rbq-u3t-jcm",
