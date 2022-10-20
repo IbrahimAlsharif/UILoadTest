@@ -1,5 +1,7 @@
 package UILoadTest;
 
+import org.testng.annotations.Test;
+
 import java.util.concurrent.Delayed;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -7,7 +9,9 @@ import java.util.concurrent.Executors;
 public class MainTest {
 
 
-    public static void main(String[] args) throws InterruptedException {
+//    public static void main(String[] args) throws InterruptedException {
+    @Test
+    public void startLoad(){
         int numberOfUsersPerSession = 1;
         String[] listOfSessionsUrls = new String[]{
                 "https://bbb.famcare.app/b/ahm-hb6-gsm-akr",
@@ -20,7 +24,11 @@ public class MainTest {
 
         for(String sessionUrl: listOfSessionsUrls){
         executor.execute(new UsersGenerator(sessionUrl, numberOfUsersPerSession));
-        Thread.sleep(2000);
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
