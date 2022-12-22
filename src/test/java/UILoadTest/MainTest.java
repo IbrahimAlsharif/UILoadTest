@@ -16,8 +16,8 @@ public class MainTest {
                 "https://bbb.famcare.app/b/ahm-zky-pbt-xjq"
         };
         ExecutorService executor = Executors.newFixedThreadPool(listOfUrls.length);
-        for (String sessionUrl : listOfUrls) {
-            executor.execute(new UsersGenerator(sessionUrl, numberOfUsersPerSession));
+        for (String Url : listOfUrls) {
+            executor.execute(new UsersGenerator(Url, numberOfUsersPerSession));
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
